@@ -13,14 +13,18 @@ const BlogPost = () => {
     .then(data => setBlogs(data))
   }, []);
 
+  // add bookmark
   const handleBookMark = (blog) => {
     // console.log(blog);
-    const newBookMark = [...bookMark, blog];
-    setBookMark(newBookMark);
+    // const newBookMark = [...bookMark, blog];
+    // setBookMark(newBookMark);
+    const addBookMark = blog.find(title => blog.BlogTitle === blog);
+    console.log(addBookMark); 
   }
 
+  // total spent time calculate
   const handleMarkToTime = (blog) => {
-    console.log(blog);
+    // console.log(blog);
     const newTime = parseInt((blog.ReadTime) + time);
     setTime(newTime);
   }
