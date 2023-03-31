@@ -1,14 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import SingleBlog from '../SingleBlog/SingleBlog';
+import './BlogPost.css';
 
 const BlogPost = () => {
   const [blogs, setBlogs] = useState([]);
+  const [bookMark, setBookMark] = useState([]);
+  const [time, setTime] = useState([]);
 
   useEffect( () => {
     fetch('blogs.json')
     .then(res => res.json())
     .then(data => setBlogs(data))
   }, []);
+
+  const handleBookMark = (blog) => {
+    // console.log(blog);
+    const newBookMark = [...bookMark, blog];
+    setBookMark(newBookMark);
+  }
+
+  const handleMarkToTime = (blog) => {
+    console.log(blog);
+    const newTime = parseInt((blog.ReadTime) + time);
+    setTime(newTime);
+  }
 
   return (
     <div className='container mt-3'>
@@ -19,6 +34,8 @@ const BlogPost = () => {
               blogs.map(blog => <SingleBlog
                 key={blog.id}
                 blog={blog}
+                handleBookMark={handleBookMark}
+                handleMarkToTime={handleMarkToTime}
               ></SingleBlog>)
             }
           </div>
@@ -26,9 +43,12 @@ const BlogPost = () => {
         <div className="col-md-4">
           <div className="bookmark-container">
             <div>
-              <input className='w-100 p-3' type="text" />
-              <h3>Spent time on read: </h3>
-              <textarea className='w-100 mt-2' name="" id="" cols="" rows="10"></textarea>
+              <div className="box box1">
+                <h5>Spent time on read: {time}</h5>
+              </div>
+              <div className="box box2 mt-4">
+                <h5>Bookmarked Blogs : {bookMark.length}</h5>
+              </div>
             </div>
           </div>
         </div>
