@@ -15,22 +15,20 @@ const BlogPost = () => {
 
   // add bookmark
   const handleBookMark = (blog) => {
-    // console.log(blog);
-    // const newBookMark = [...bookMark, blog];
-    // setBookMark(newBookMark);
-    const addBookMark = blog.find(title => blog.BlogTitle === blog);
-    console.log(addBookMark); 
+    console.log(blog);
+    const newBookMark = [...bookMark, blog];
+    setBookMark(newBookMark);
   }
 
   // total spent time calculate
   const handleMarkToTime = (blog) => {
     // console.log(blog);
-    const newTime = parseInt((blog.ReadTime) + time);
+    const newTime = parseInt((blog.readTime) + time);
     setTime(newTime);
   }
 
   return (
-    <div className='container mt-3'>
+    <div className='container mt-3 blog-post-container'>
       <div className="row grid-cols-12 grid-cols-md-3 grid-cols-lg-2">
         <div className="col-md-8">
           <div className="blogPost-container">
