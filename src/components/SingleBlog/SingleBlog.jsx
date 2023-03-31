@@ -4,8 +4,14 @@ import './SingleBlog.css';
 import icon from '../../images/bookmark.png';
 
 const SingleBlog = (props) => {
-  console.log(props.blog);
+  // console.log(props.blog);
   const {AuthorName, BlogTitle, AuthorImage, ReadTime, PublishDate, Images} = props.blog;
+
+  // const handleMarkRead = () => {
+  //   console.log('mark read btn click');
+  // }
+
+  const handleMarkRead = props.handleMarkRead;
 
   return (
     <div>
@@ -23,14 +29,14 @@ const SingleBlog = (props) => {
               </div>
             </div>
             <div className='d-flex gap-3'>
-              <p>{ReadTime}</p> 
+              <p>{ReadTime} min read</p> 
               <img src={icon} alt="" />
             </div>
           </div>
           <Card.Text>
-            <h2>{BlogTitle}</h2>
+            <h3>{BlogTitle}</h3>
             <p>#beginners #programming</p>
-            <a className='mark-as-read' href="#">Mark as read</a>
+            <a onClick={() => handleMarkRead(props.blog)} className='mark-as-read' href="#">Mark as read</a>
           </Card.Text>
         </Card.Body>
       </Card>

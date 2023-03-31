@@ -4,11 +4,17 @@ import SingleBlog from '../SingleBlog/SingleBlog';
 const BlogPost = () => {
   const [blogs, setBlogs] = useState([]);
 
+  const [count, setCount] = useState(0);
+
   useEffect( () => {
     fetch('blogs.json')
     .then(res => res.json())
     .then(data => setBlogs(data))
   }, []);
+
+  const handleMarkRead = (blog) => {
+    console.log(blog);
+  }
 
   return (
     <div className='container mt-3'>
@@ -19,6 +25,7 @@ const BlogPost = () => {
               blogs.map(blog => <SingleBlog
                 key={blog.id}
                 blog={blog}
+                handleMarkRead={handleMarkRead}
               ></SingleBlog>)
             }
           </div>
@@ -27,6 +34,7 @@ const BlogPost = () => {
           <div className="bookmark-container">
             <div>
               <input className='w-100 p-3' type="text" />
+              <h3>Spent time on read: </h3>
               <textarea className='w-100 mt-2' name="" id="" cols="" rows="10"></textarea>
             </div>
           </div>

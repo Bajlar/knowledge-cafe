@@ -14,9 +14,10 @@ Read time
 Publish Date   
 --------------------------ok
 
-Fetch the above mentioned json file and create/show four cards with the JSON data. Each card will contain the information of a single blog.
+Fetch the above mentioned json file and create/show four cards with the JSON data. Each card will contain the information of a single blog.----ok
 
 Initially, “Time spent on reading” will be 0. After clicking on the “Mark as read” button, the read time of the selected card will be added to the previous time & shown on the “Time spent on read” section. No hour-minute conversion needed. More than 1 click is allowed for a single blog.
+
 After clicking on the bookmark icon for each blog, update the total number of blogs added as bookmark and show it on the right sidebar. Initially, it is zero. You can bookmark a blog multiple times.
 Show the title of each bookmarked blog on the right sidebar. Initially the title lists will be empty.
 

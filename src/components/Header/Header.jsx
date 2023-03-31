@@ -9,7 +9,7 @@ const Header = () => {
     <div className='container'>
       <Navbar>
         <Container>
-          <Navbar.Brand>Knowledge Cafe</Navbar.Brand>
+          <Navbar.Brand><h2>Knowledge Cafe</h2></Navbar.Brand>
           <Nav className="ms-auto d-flex align-items-center">
             <Nav.Link href="#home">Home</Nav.Link>
             <Nav.Link href="#home">About</Nav.Link>
