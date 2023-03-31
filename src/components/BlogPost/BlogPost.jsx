@@ -15,7 +15,7 @@ const BlogPost = () => {
 
   // add bookmark
   const handleBookMark = (blog) => {
-    console.log(blog);
+    // console.log(blog);
     const newBookMark = [...bookMark, blog];
     setBookMark(newBookMark);
   }
