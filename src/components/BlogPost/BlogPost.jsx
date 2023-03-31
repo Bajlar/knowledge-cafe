@@ -4,17 +4,11 @@ import SingleBlog from '../SingleBlog/SingleBlog';
 const BlogPost = () => {
   const [blogs, setBlogs] = useState([]);
 
-  const [count, setCount] = useState(0);
-
   useEffect( () => {
     fetch('blogs.json')
     .then(res => res.json())
     .then(data => setBlogs(data))
   }, []);
-
-  const handleMarkRead = (blog) => {
-    console.log(blog);
-  }
 
   return (
     <div className='container mt-3'>
@@ -25,7 +19,6 @@ const BlogPost = () => {
               blogs.map(blog => <SingleBlog
                 key={blog.id}
                 blog={blog}
-                handleMarkRead={handleMarkRead}
               ></SingleBlog>)
             }
           </div>
