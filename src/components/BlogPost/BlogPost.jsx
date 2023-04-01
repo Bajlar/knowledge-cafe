@@ -16,7 +16,8 @@ const BlogPost = () => {
   // add bookmark
   const handleBookMark = (blog) => {
     // console.log(blog);
-    const newBookMark = [...bookMark, blog];
+    const newBookMark = [...bookMark, blog.blogTitle];
+    // console.log(newBookMark);
     setBookMark(newBookMark);
   }
 
@@ -50,6 +51,7 @@ const BlogPost = () => {
               </div>
               <div className="box box2 mt-4">
                 <h5>Bookmarked Blogs : {bookMark.length}</h5>
+                <p>{bookMark}</p>
               </div>
             </div>
           </div>
